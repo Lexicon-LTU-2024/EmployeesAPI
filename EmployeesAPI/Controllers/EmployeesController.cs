@@ -25,6 +25,12 @@ namespace EmployeesAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Employee>>> GetEmployee()
         {
+            //var arr = Enumerable.Range(0, 100);
+            //var res  = arr.ToList();
+            //var res2 = arr.Where(n => n > 50);
+
+            //var res3 = await _context.Employee.Where(e => e.Salary > 10000).ToListAsync();
+
             return await _context.Employee.ToListAsync();
         }
 
@@ -39,7 +45,7 @@ namespace EmployeesAPI.Controllers
                 return NotFound();
             }
 
-            return employee;
+            return Ok(employee);
         }
 
         // PUT: api/Employees/5
